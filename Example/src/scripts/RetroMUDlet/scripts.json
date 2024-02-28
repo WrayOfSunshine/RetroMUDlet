@@ -1,0 +1,8 @@
+[
+  {
+    "name": "RetroMUDlet_example_script",
+    "eventHandlerList": [
+      "sysInstall"
+    ]
+  }
+]

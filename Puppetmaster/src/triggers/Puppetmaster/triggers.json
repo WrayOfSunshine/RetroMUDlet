@@ -1,0 +1,31 @@
+[
+    {
+        "name": "Feather Weighting",
+        "isFolder": "yes",
+        "children": [
+            {
+                "name": "Feather Weight Cast",
+                "patterns": [
+                    {
+                        "pattern": "^You chant 'Gravis pluma!.'$",
+                        "type": "regex"
+                    }
+                ],
+                "script": "FeatherWeight()"
+            },
+            {
+                "name": "Already Light",
+                "patterns": [
+                    {
+                        "pattern": "^That item cannot be made any lighter.$",
+                        "type": "regex"
+                    },
+                    {
+                        "pattern": "^The weight of this item has already been reduced.$",
+                        "type": "regex"
+                    }
+                ]
+            }
+        ]
+    }
+]

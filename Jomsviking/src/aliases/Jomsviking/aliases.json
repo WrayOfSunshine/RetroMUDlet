@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Weatherize",
+    "regex": "^oil\\s*(.*)$"
+  },
+  {
+    "name": "Make Runes",
+    "regex": "^makerunes$"
+  },
+  {
+    "name": "Dusk Rune",
+    "regex": "^duskrune (.+)$"
+  },
+  {
+    "name": "Dawn Rune",
+    "regex": "^dawnrune (.+)$"
+  },
+  {
+    "name": "Door Rune",
+    "regex": "^runedoor\\s*(.*)$"
+  }
+]

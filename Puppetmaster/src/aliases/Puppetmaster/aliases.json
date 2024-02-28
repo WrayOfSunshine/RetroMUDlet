@@ -1,0 +1,6 @@
+[
+    {
+        "name": "Feather Weight",
+        "regex": "^fw\\s*(.*)$"
+    }
+]

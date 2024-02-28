@@ -1,0 +1,72 @@
+[
+    {
+        "name": "Weatherizing",
+        "isFolder": "yes",
+        "children": [
+            {
+                "name": "Weatherized Item",
+                "patterns": [
+                    {
+                        "pattern": "^You oil down .* with animal fat.$",
+                        "type": "regex"
+                    }
+                ]
+            },
+            {
+                "name": "Already Weatherized",
+                "patterns": [
+                    {
+                        "pattern": "^This item has already been weatherized.$",
+                        "type": "regex"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Rune Making",
+        "isFolder": "yes",
+        "children": [
+            {
+                "name": "No Chips Detected",
+                "patterns": [
+                    {
+                        "pattern": "^Your inventory doesn't seem to contain a chip.$",
+                        "type": "regex"
+                    }
+                ],
+                "script": "deleteLine() RuneMaker(-1)"
+            },
+            {
+                "name": "Chips Detected",
+                "patterns": [
+                    {
+                        "pattern": "^There (?is|are) (?<chips>\\d+) (?chip|chips) in your inventory.$",
+                        "type": "regex"
+                    }
+                ],
+                "script": "deleteLine() RuneMaker(matches[chips])"
+            },
+            {
+                "name": "Aett Carved",
+                "patterns": [
+                    {
+                        "pattern": "You then rist",
+                        "type": "regex"
+                    }
+                ],
+                "script": "Rune_Count = Rune_Count+1 RuneMaker('runes')"
+            },
+            {
+                "name": "Chips Gone",
+                "patterns": [
+                    {
+                        "pattern": "^You don't have chip.$",
+                        "type": "regex"
+                    }
+                ],
+                "script": "echo('Missing chips. Resetting rune maker.') Rune_Count = 0"
+            }
+        ]
+    }
+]

@@ -1,0 +1,7 @@
+{
+  "package": "RetroMUDlet-Shared",
+  "version": "1.0.0",
+  "author": "Loktai",
+  "title": "Shared scripts for RetroMUDlet packages",
+  "outputFile": true
+}
