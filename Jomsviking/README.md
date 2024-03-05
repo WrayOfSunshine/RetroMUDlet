@@ -7,20 +7,27 @@ A script package for Jomsvikings in RetroMUD. Don't forget to install RetroMUDle
 ### Aliases
 
 * `oil <param1>`
-  * Calls the Weatherize script, with optional target argument. Uses iteration rather than object handling, so don't pass a target with a count or a complex object handling target.
+  * Calls the Weatherize script, with optional target argument.
+  * Now uses object handling internally - sends "use weatherize at max 1 all (target) except all weatherized".
     * Example: `oil armor`
-      * Starts weatherizing all armor on ground, starting at armor 1.
+      * Starts weatherizing all armor on ground that is not yet weatherized.
     * Example: `oil`
-      * Continues the weatherization process on the existing weatherize target at the existing count.
+      * Continues the weatherization process on the existing weatherize targets.
 * `makerunes`
-  * Calls the Rune Maker script.
-    * Passes "runes" if the variable state suggests we are continuing an existing session.
+  * Calls the Rune Maker script, which handles all the necessary steps to make one set of 24 runes.
 * `duskrune <target>`
-  * Carves a rune of dusk on the target. No iteration/script backing.
+  * Carves a rune of dusk on the target.
+  * No iteration or logic applied.
 * `dawnrune <target>`
-  * Carves a rune of dawn on the target. No iteration/script backing.
+  * Carves a rune of dawn on the target.
+  * No iteration or logic applied.
 * `runedoor <target>`
-  * Carves a door rune onto the target door. No iteration/script backing. Defaults to "door" if no argument given.
+  * Carves a door rune onto the target door.
+  * No iteration or logic applied.
+  * Defaults to "door" if no argument given.
+* `findchip`
+  * Finds a single wood chip. Will continue RuneMaker process if it was interrupted.
+  * This should probably never be used, but I wanted it to be an option for those who want to use it for some reason.
 
 ### Scripts
 

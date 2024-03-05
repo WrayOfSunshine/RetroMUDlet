@@ -31,10 +31,11 @@ function ChipFinder(result)
 
     if result ~= "fumble" then
         echo("Fumbled the skill. Trying again.")
-        send("use find chip")
+        FindChip()
     end
 
     if result ~= "success" then
+        ChipFinder("reset")
         send("count chips")
     end
 end

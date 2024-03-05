@@ -18,5 +18,9 @@
   {
     "name": "Door Rune",
     "regex": "^runedoor\\s*(.*)$"
+  },
+  {
+    "name": "Find Chip",
+    "regex": "^findchip$"
   }
 ]
