@@ -24,17 +24,15 @@ jobs:
           name: RetroMUDlet - Shared
           path: "${{ github.workspace }}/Shared/build/tmp"
 
-      - name: Get current date/time
-        id: date
-        run: |
-          echo "{date}={$(date +'%Y.%m.%d-T%H.%M.%S')}" >> $GITHUB_STATE
-   
+      - name: set timestamp
+        run: echo “NOW=$(date +’%Y.%m.%d-%H.%M.%S’)” >> $GITHUB_ENV
+
       - name: Automatic Releases
         uses: marvinpinto/action-automatic-releases@v1.2.1
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           prerelease: true
-          automatic_release_tag: ${{ env.date }}
+          automatic_release_tag: "${{ env.NOW }}-CI"
           files: |
             **/*.zip
      
