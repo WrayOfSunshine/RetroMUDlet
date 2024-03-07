@@ -1,10 +1,10 @@
 name: CI
 
-on: # commenting out automated build until I have the muddler build step configured properly.
-#  push:
-#    branches: [ "main" ]
-#  pull_request:
-#    branches: [ "main" ]
+on: 
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
   workflow_dispatch:
 
 jobs:
@@ -13,6 +13,13 @@ jobs:
     steps:
       - name: Checkout Branch
         uses: actions/checkout@v3
-      - name: Build With Muddler
+      - name: Build RetroMUDlet - Shared
         uses: demonnic/build-with-muddler@v1.4
+        with:
+          working-directory: "${{ github.workspace }}/Shared"
             
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v3.1.2
+        with:
+          name: RetroMUDlet - Shared
+          path: "${{ github.workspace }}/Shared/build/tmp"
