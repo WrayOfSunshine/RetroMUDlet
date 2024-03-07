@@ -31,5 +31,5 @@ jobs:
           prerelease: true
           automatic_release_tag: "0.0.${{ github.run_attempt }}-CI"
           files: |
-            *.mpackage
+            ${{ github.workspace }}/**/*.mpackage
      
