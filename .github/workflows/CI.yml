@@ -19,7 +19,7 @@ jobs:
           workingDir: "${{ github.workspace }}/Shared"
             
       - name: Upload Artifact
-        uses: actions/upload-artifact@v3.1.2
+        uses: actions/upload-artifact@v4.3.1
         with:
           name: RetroMUDlet - Shared
           path: "${{ github.workspace }}/Shared/build/tmp"
