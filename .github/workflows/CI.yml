@@ -1,0 +1,18 @@
+name: CI
+
+on: # commenting out automated build until I have the muddler build step configured properly.
+#  push:
+#    branches: [ "main" ]
+#  pull_request:
+#    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Branch
+        uses: actions/checkout@v3
+      - name: Build With Muddler
+        uses: demonnic/build-with-muddler@v1.4
+            
